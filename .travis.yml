@@ -18,6 +18,6 @@ install:
 
 script:
   - git user.email="jluis@cpan.org"
-  - git user.Name="jluis"
+  - git user.name="jluis"
   - HARNESS_OPTIONS=j9:c DZIL_AIRPLANE=1 PERL5OPT=Ilib dzil test --author
 
