@@ -2,10 +2,10 @@ sudo: false
 language: perl
 
 perl:
- - "5.8"
- - "5.10"
- - "5.12"
- - "5.14"
+ #- "5.8"
+ #- "5.10"
+ #- "5.12"
+ #- "5.14"
  - "5.16"
  - "5.18"
  - "5.20"
@@ -17,5 +17,7 @@ install:
   - dzil listdeps --author --missing | cpanm || { cat ~/.cpanm/build.log ; false ; }
 
 script:
+  - git user.email="jluis@cpan.org"
+  - git user.Name="jluis"
   - HARNESS_OPTIONS=j9:c DZIL_AIRPLANE=1 PERL5OPT=Ilib dzil test --author
 
